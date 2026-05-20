@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class compras {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        ArrayList<String> compras = new ArrayList<String>();
+
+        int opção;
+        do { 
+            System.out.println("1- Adicionar item");
+            System.out.println("2- Listar itens");
+            System.out.println("3- Remover item");
+            System.out.println("4- Sair");
+            opcao= sc.nextLine();
+            sc.nextLine();
+        switch (opcao){
+        case 1:
+        System.out.println("adicione um item");
+        String item = sc.nextLine();
+
+        lista.add(item);
+
+        System.out.println("item adicionado");
+        break;
+
+        case 2:
+        
+        if(lista.isEmpty()){
+            System.out.println("lista está vazia");
+        }else {
+            System.out.println("/nLista de compras:");
+            for(int i=0; i < lista.size(); i++){
+                System.out.println(i + " _ " + lista.get(i));
+            }
+        }
+        break;
+        
+        case 3:
+            System.out.print("digite o indice do item para ser removido:");
+            int indice = sc.nextInt();
+            
+            if (indice >= 0 && indice < lista.size()){
+                lista.remover(indice);
+                System.out.println("item removido");
+            }else{
+                System.out.println("indice invalido");
+        }
+            break;
+            case 4:
+                System.out.println("programa encerrado");
+                break;
+            default:
+                System.out.println("opção invalida");
+            }
+
+        }while(opcao !=4);
+
+    sc.close();
+
+
+ }
+}
